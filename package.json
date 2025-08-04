@@ -1,0 +1,20 @@
+{
+  "name": "local",
+  "version": "1.0.0",
+  "description": "A sophisticated, modern, and highly performant website for an international education consultancy. Built with advanced web technologies and best practices to provide an exceptional user experience.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SYED6281/local.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SYED6281/local/issues"
+  },
+  "homepage": "https://github.com/SYED6281/local#readme"
+}
