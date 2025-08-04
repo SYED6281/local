@@ -1,38 +1,33 @@
 pipeline {
-    agent any
-
-    environment {
-        IMAGE_NAME = "yourdockerhubusername/your-image-name"
+  agent any
+  environment {
+    DOCKER_IMAGE = "syed6281/myapp:latest"
+  }
+  stages {
+    stage('Clone Repo') {
+      steps {
+        git 'https://github.com/SYED6281/local.git'
+      }
     }
 
-    stages {
-        stage('Clone Repo') {
-            steps {
-                echo "Cloning your repo..."
-                git 'https://github.com/SYED6281/local.git'
-            }
-        }
-
-        stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t $IMAGE_NAME .'
-            }
-        }
-
-        stage('Run in Kubernetes') {
-            steps {
-                sh '''
-                kubectl delete deployment website-deploy --ignore-not-found
-                kubectl create deployment website-deploy --image=$IMAGE_NAME
-                kubectl expose deployment website-deploy --type=NodePort --port=80
-                '''
-            }
-        }
-
-        stage('Show URL') {
-            steps {
-                sh 'minikube service website-deploy --url'
-            }
-        }
+    stage('Build Docker Image') {
+      steps {
+        sh 'docker build -t $DOCKER_IMAGE .'
+      }
     }
+
+    stage('Push Docker Image') {
+      steps {
+        withDockerRegistry([credentialsId: 'dockerhub-cred-id', url: '']) {
+          sh 'docker push $DOCKER_IMAGE'
+        }
+      }
+    }
+
+    stage('Deploy to Kubernetes') {
+      steps {
+        sh 'kubectl apply -f k8s/deployment.yaml'
+      }
+    }
+  }
 }
