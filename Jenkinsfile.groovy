@@ -1,10 +1,10 @@
 pipeline {
   agent any
   environment {
-    DOCKER_IMAGE = "syed6281/myapp:latest"
+    IMAGE_NAME = "syed6281/myapp:latest"
   }
   stages {
-    stage('Clone Repo') {
+    stage('Clone') {
       steps {
         git 'https://github.com/SYED6281/local.git'
       }
@@ -12,21 +12,14 @@ pipeline {
 
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t $DOCKER_IMAGE .'
+        sh 'docker build -t $IMAGE_NAME .'
       }
     }
 
-    stage('Push Docker Image') {
+    stage('Run Docker Container') {
       steps {
-        withDockerRegistry([credentialsId: 'dockerhub-cred-id', url: '']) {
-          sh 'docker push $DOCKER_IMAGE'
-        }
-      }
-    }
-
-    stage('Deploy to Kubernetes') {
-      steps {
-        sh 'kubectl apply -f k8s/deployment.yaml'
+        sh 'docker stop myapp || true && docker rm myapp || true'
+        sh 'docker run -d -p 3000:3000 --name myapp $IMAGE_NAME'
       }
     }
   }
