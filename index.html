@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marwa Education Consultant - Premium Study Abroad & Local Admissions</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Premier education consultancy for study abroad admissions and local college guidance in South India. Expert counseling for USA, UK, Canada, Australia and top institutions in Telangana, AP, TN, Karnataka.">
+    <meta name="keywords" content="study abroad, education consultant, university admissions, visa guidance, scholarship assistance, college admissions India, overseas education">
+    <meta name="author" content="Marwa Education Consultant">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Marwa Education Consultant - Your Gateway to World-Class Education">
+    <meta property="og:description" content="Expert guidance for international and local university admissions with 98% visa success rate">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marwaeducation.com">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    
+    <!-- External Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Marwa Education Consultant",
+        "description": "Premier education consultancy for international and local university admissions",
+        "url": "https://marwaeducation.com",
+        "telephone": "+91-98765-43210",
+        "email": "admissions@marwaeducation.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Education Street, Begumpet",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "postalCode": "500016",
+            "addressCountry": "IN"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="logo-loader">
+                <img src="marwa-logo.png" alt="Marwa Education">
+            </div>
+            <div class="loader-animation">
+                <div class="loader-dot"></div>
+                <div class="loader-dot"></div>
+                <div class="loader-dot"></div>
+            </div>
+            <p>Loading Excellence...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="header" class="header">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="#home" class="logo" aria-label="Marwa Education Home">
+                    <img src="marwa-logo.png" alt="Marwa Education Logo" width="45" height="45">
+                    <span class="logo-text">
+                        MARWA <span class="logo-accent">EDUCATION</span>
+                    </span>
+                </a>
+
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-list" role="menubar">
+                        <li class="nav-item" role="none">
+                            <a href="#home" class="nav-link" role="menuitem" data-section="home">Home</a>
+                        </li>
+                        <li class="nav-item dropdown" role="none">
+                            <a href="#services" class="nav-link dropdown-toggle" role="menuitem" data-section="services">
+                                Services <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#university-selection" role="menuitem">University Selection</a></li>
+                                <li><a href="#application-processing" role="menuitem">Application Processing</a></li>
+                                <li><a href="#visa-guidance" role="menuitem">Visa Guidance</a></li>
+                                <li><a href="#scholarship-assistance" role="menuitem">Scholarship Assistance</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#countries" class="nav-link" role="menuitem" data-section="countries">Study Abroad</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#local" class="nav-link" role="menuitem" data-section="local">Local Admissions</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#testimonials" class="nav-link" role="menuitem" data-section="testimonials">Success Stories</a>
+                        </li>
+                        <li class="nav-item" role="none">
+                            <a href="#contact" class="nav-link" role="menuitem" data-section="contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="nav-actions">
+                    <button class="btn btn-cta" onclick="openConsultationModal()">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Consultation
+                    </button>
+                    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home" data-aos="fade-in">
+        <div class="hero-background">
+            <div class="hero-video-container">
+                <video autoplay muted loop playsinline class="hero-video">
+                    <source src="hero-video.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-particles" id="particles"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down" data-aos-delay="200">
+                <i class="fas fa-award"></i>
+                <span>Trusted by 2000+ Students Worldwide</span>
+            </div>
+            
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
+                Your Gateway to 
+                <span class="text-gradient">World-Class Education</span>
+            </h1>
+            
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
+                Marwa Education Consultant helps students secure admissions in top universities worldwide and prestigious institutions across South India with personalized guidance and proven success strategies.
+            </p>
+            
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="800">
+                <button class="btn btn-primary btn-lg" onclick="openConsultationModal()">
+                    <i class="fas fa-rocket"></i>
+                    Start Your Journey
+                </button>
+                <a href="tel:+919876543210" class="btn btn-secondary btn-lg">
+                    <i class="fas fa-phone-alt"></i>
+                    Call Now
+                </a>
+            </div>
+            
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="1000">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="2000">0</div>
+                    <div class="stat-label">Students Guided</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-label">Visa Success %</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Top Universities</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll-indicator" data-aos="fade-in" data-aos-delay="1200">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Our Services</span>
+                <h2 class="section-title">Comprehensive Education Solutions</h2>
+                <p class="section-description">
+                    We provide end-to-end support for all your educational aspirations, from selecting the right program to settling in your new academic environment.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>University Selection</h3>
+                    <p>AI-powered university matching based on your profile, budget, and career goals with detailed compatibility analysis.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Personalized university shortlisting</li>
+                        <li><i class="fas fa-check"></i> Program compatibility analysis</li>
+                        <li><i class="fas fa-check"></i> ROI calculation and budget planning</li>
+                    </ul>
+                    <a href="#" class="service-link" onclick="openServiceModal('university-selection')">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h3>Application Processing</h3>
+                    <p>Complete handling of applications with document verification, quality checks, and submission tracking.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Document preparation & verification</li>
+                        <li><i class="fas fa-check"></i> Application timeline management</li>
+                        <li><i class="fas fa-check"></i> Quality assurance & review</li>
+                    </ul>
+                    <a href="#" class="service-link" onclick="openServiceModal('application-processing')">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3>SOP & LOR Assistance</h3>
+                    <p>Professional editing and crafting of compelling personal statements and recommendation letters.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Professional SOP writing</li>
+                        <li><i class="fas fa-check"></i> LOR template and guidance</li>
+                        <li><i class="fas fa-check"></i> Multiple revision rounds</li>
+                    </ul>
+                    <a href="#" class="service-link" onclick="openServiceModal('sop-lor')">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Visa Guidance</h3>
+                    <p>Comprehensive visa support with mock interviews, document preparation, and appointment scheduling.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Visa interview preparation</li>
+                        <li><i class="fas fa-check"></i> Document checklist & review</li>
+                        <li><i class="fas fa-check"></i> Appointment booking assistance</li>
+                    </ul>
+                    <a href="#" class="service-link" onclick="openServiceModal('visa-guidance')">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-scholarship"></i>
+                    </div>
+                    <h3>Scholarship Assistance</h3>
+                    <p>Comprehensive scholarship search and application support to minimize your education costs.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Scholarship database access</li>
+                        <li><i class="fas fa-check"></i> Application strategy planning</li>
+                        <li><i class="fas fa-check"></i> Essay writing assistance</li>
+                    </ul>
+                    <a href="#" class="service-link" onclick="openServiceModal('scholarship')">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3>Pre-Departure Support</h3>
+                    <p>Complete orientation covering accommodation, banking, culture, and essential preparations.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Accommodation guidance</li>
+                        <li><i class="fas fa-check"></i> Banking & financial setup</li>
+                        <li><i class="fas fa-check"></i> Cultural orientation sessions</li>
+                    </ul>
+                    <a href="#" class="service-link" onclick="openServiceModal('pre-departure')">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section class="countries-section" id="countries">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Study Destinations</span>
+                <h2 class="section-title">World-Class Education Opportunities</h2>
+                <p class="section-description">
+                    Explore premium universities across the globe with our expert guidance and proven admission strategies.
+                </p>
+            </div>
+            
+            <div class="countries-filter" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">All Countries</button>
+                <button class="filter-btn" data-filter="popular">Most Popular</button>
+                <button class="filter-btn" data-filter="affordable">Most Affordable</button>
+                <button class="filter-btn" data-filter="scholarship">Best Scholarships</button>
+            </div>
+            
+            <div class="countries-grid" id="countriesGrid">
+                <div class="country-card popular scholarship" data-aos="fade-up" data-aos-delay="100">
+                    <div class="country-header">
+                        <div class="country-image" style="background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3')"></div>
+                        <div class="country-flag" style="background-image: url('https://flagcdn.com/w320/us.png')"></div>
+                        <div class="country-badges">
+                            <span class="badge popular">Popular</span>
+                            <span class="badge scholarship">Scholarships</span>
+                        </div>
+                    </div>
+                    <div class="country-content">
+                        <h3>United States</h3>
+                        <p>Home to Ivy League universities and world-renowned research institutions with cutting-edge facilities.</p>
+                        <div class="country-stats">
+                            <div class="stat">
+                                <span class="stat-label">Universities</span>
+                                <span class="stat-value">4000+</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Avg Cost</span>
+                                <span class="stat-value">$30-60k</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Work Rights</span>
+                                <span class="stat-value">OPT Available</span>
+                            </div>
+                        </div>
+                        <div class="country-highlights">
+                            <span class="highlight">Silicon Valley</span>
+                            <span class="highlight">Research Excellence</span>
+                            <span class="highlight">Global Recognition</span>
+                        </div>
+                        <button class="btn btn-outline" onclick="openCountryModal('usa')">
+                            Explore USA
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Additional country cards would be added here -->
+                <!-- UK, Canada, Australia, Germany, New Zealand cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section with Video -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Success Stories</span>
+                <h2 class="section-title">What Our Students Say</h2>
+                <p class="section-description">
+                    Real experiences from students who transformed their academic dreams into reality with our guidance.
+                </p>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonials-carousel" id="testimonialsCarousel" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <div class="testimonial-video">
+                                <video poster="testimonial-thumbnail-1.jpg" controls>
+                                    <source src="testimonial-video-1.mp4" type="video/mp4">
+                                </video>
+                                <div class="play-overlay">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="testimonial-text">
+                                <blockquote>
+                                    "Marwa's team didn't just help me get into Stanford, they helped me discover my potential. Their personalized approach and attention to detail made all the difference."
+                                </blockquote>
+                                <div class="testimonial-author">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya K.">
+                                    <div class="author-info">
+                                        <h4>Priya Krishnan</h4>
+                                        <p>MS Computer Science, Stanford University</p>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional testimonial slides -->
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" onclick="changeTestimonial(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-indicators" id="testimonialIndicators"></div>
+                    <button class="carousel-btn next" onclick="changeTestimonial(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Enhanced Features -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header light" data-aos="fade-up">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Ready to Begin Your Journey?</h2>
+                <p class="section-description">
+                    Contact us for a free consultation and take the first step toward your academic dreams.
+                </p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
+                    <div class="office-locations">
+                        <h3>Our Offices</h3>
+                        <div class="location-cards">
+                            <div class="location-card">
+                                <div class="location-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="location-details">
+                                    <h4>Hyderabad (HQ)</h4>
+                                    <p>123 Education Street, Begumpet<br>Hyderabad, Telangana 500016</p>
+                                    <span class="location-status">Open Now</span>
+                                </div>
+                            </div>
+                            <!-- Additional location cards -->
+                        </div>
+                    </div>
+                    
+                    <div class="contact-methods">
+                        <h3>Connect With Us</h3>
+                        <div class="contact-options">
+                            <a href="tel:+919876543210" class="contact-option">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 98765 43210</span>
+                            </a>
+                            <a href="mailto:admissions@marwaeducation.com" class="contact-option">
+                                <i class="fas fa-envelope"></i>
+                                <span>admissions@marwaeducation.com</span>
+                            </a>
+                            <a href="https://wa.me/919876543210" class="contact-option whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Chat on WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <h3>Follow Our Journey</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link" data-platform="instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" data-platform="linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" data-platform="youtube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-link" data-platform="facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container" data-aos="fade-left" data-aos-delay="400">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send Us a Message</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <optgroup label="Study Abroad">
+                                    <option value="usa">USA Admissions</option>
+                                    <option value="uk">UK Admissions</option>
+                                    <option value="canada">Canada Admissions</option>
+                                    <option value="australia">Australia Admissions</option>
+                                    <option value="germany">Germany Admissions</option>
+                                </optgroup>
+                                <optgroup label="Local Admissions">
+                                    <option value="telangana">Telangana Colleges</option>
+                                    <option value="andhra">Andhra Pradesh Colleges</option>
+                                    <option value="tamilnadu">Tamil Nadu Colleges</option>
+                                    <option value="karnataka">Karnataka Colleges</option>
+                                </optgroup>
+                                <optgroup label="Other Services">
+                                    <option value="visa">Visa Assistance</option>
+                                    <option value="sop">SOP/LOR Help</option>
+                                    <option value="scholarship">Scholarship Guidance</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Goals *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Share your educational aspirations, preferred countries/states, budget considerations, and any specific requirements..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for education tips and updates
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="whatsapp-updates" name="whatsapp-updates">
+                                <span class="checkmark"></span>
+                                Receive updates via WhatsApp
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                Sending...
+                            </span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        
+                        <p class="form-note">
+                            <i class="fas fa-shield-alt"></i>
+                            Your information is secure and will never be shared with third parties.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="marwa-logo.png" alt="Marwa Education">
+                        <span>MARWA <span class="accent">EDUCATION</span></span>
+                    </div>
+                    <p class="footer-description">
+                        Your trusted partner for global and local education consulting since 2010. 
+                        We help students achieve their academic dreams through expert guidance and proven strategies.
+                    </p>
+                    <div class="footer-certifications">
+                        <img src="certification-1.png" alt="ICEF Certified">
+                        <img src="certification-2.png" alt="British Council Certified">
+                        <img src="certification-3.png" alt="NAFSA Member">
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#blog">Blog & Resources</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Study Abroad</h4>
+                        <ul>
+                            <li><a href="#usa">USA Universities</a></li>
+                            <li><a href="#uk">UK Universities</a></li>
+                            <li><a href="#canada">Canada Universities</a></li>
+                            <li><a href="#australia">Australia Universities</a></li>
+                            <li><a href="#germany">Germany Universities</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Local Admissions</h4>
+                        <ul>
+                            <li><a href="#telangana">Telangana Colleges</a></li>
+                            <li><a href="#andhra">Andhra Pradesh</a></li>
+                            <li><a href="#tamilnadu">Tamil Nadu</a></li>
+                            <li><a href="#karnataka">Karnataka</a></li>
+                            <li><a href="#medical">Medical Colleges</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#scholarships">Scholarship Database</a></li>
+                            <li><a href="#requirements">Admission Requirements</a></li>
+                            <li><a href="#cost-calculator">Cost Calculator</a></li>
+                            <li><a href="#webinars">Free Webinars</a></li>
+                            <li><a href="#ebooks">Download E-books</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2023 Marwa Education Consultant. All Rights Reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#cookies">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <!-- WhatsApp Float -->
+        <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" 
+           data-tooltip="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        
+        <!-- Back to Top -->
+        <button class="back-to-top" id="backToTop" data-tooltip="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <!-- Live Chat -->
+        <button class="live-chat-btn" id="liveChatBtn" data-tooltip="Start live chat">
+            <i class="fas fa-comments"></i>
+            <span class="notification-dot"></span>
+        </button>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    
+    <!-- Consultation Booking Modal -->
+    <div class="modal consultation-modal" id="consultationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book Free Consultation</h3>
+                <button class="modal-close" onclick="closeModal('consultationModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="consultationForm" class="consultation-form">
+                    <!-- Consultation form fields -->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/carousel.js"></script>
+</body>
+</html>
