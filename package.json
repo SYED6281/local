@@ -1,0 +1,21 @@
+{
+  "name": "basic-jenkins-app",
+  "version": "1.0.0",
+  "description": "Basic application for Jenkins deployment",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jenkins",
+    "deployment",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+
