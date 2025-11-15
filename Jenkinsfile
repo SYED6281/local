@@ -4,6 +4,10 @@ pipeline {
     environment {
         NODE_VERSION = '18'
         APP_NAME = 'basic-jenkins-app'
+        // EC2 Deployment Variables - Set these in Jenkins job configuration
+        // EC2_HOST should be set as environment variable in Jenkins job
+        EC2_USER = 'ec2-user'
+        APP_DIR = '/home/ec2-user/app'
     }
     
     stages {
@@ -32,14 +36,35 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
+        stage('Deploy to EC2') {
             steps {
-                echo 'Deploying application...'
-                sh """
-                    echo "Application deployment completed!"
-                    echo "App Name: ${APP_NAME}"
-                    echo "Node Version: ${NODE_VERSION}"
-                """
+                echo 'Deploying application to EC2...'
+                script {
+                    // Check if EC2_HOST is set
+                    if (!env.EC2_HOST || env.EC2_HOST.isEmpty()) {
+                        error('EC2_HOST environment variable is not set. Please configure it in Jenkins job settings.')
+                    }
+                    
+                    // Make deploy script executable
+                    sh 'chmod +x deploy.sh'
+                    
+                    // Deploy to EC2 using SSH credentials
+                    // Make sure to configure 'ec2-deploy-key' credential in Jenkins
+                    withCredentials([sshUserPrivateKey(
+                        credentialsId: 'ec2-deploy-key',
+                        keyFileVariable: 'SSH_KEY',
+                        usernameVariable: 'SSH_USER'
+                    )]) {
+                        sh """
+                            export EC2_HOST='${EC2_HOST}'
+                            export EC2_USER='${EC2_USER}'
+                            export APP_DIR='${APP_DIR}'
+                            export SSH_KEY='${SSH_KEY}'
+                            export APP_NAME='${APP_NAME}'
+                            ./deploy.sh
+                        """
+                    }
+                }
             }
         }
     }
