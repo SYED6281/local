@@ -53,4 +53,3 @@ This repository includes a `Jenkinsfile` that defines a CI/CD pipeline with the 
 ## License
 
 ISC
-
