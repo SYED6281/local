@@ -20,43 +20,70 @@ if [ -z "$EC2_HOST" ]; then
     exit 1
 fi
 
+if [ -z "$SSH_KEY" ] || [ ! -f "$SSH_KEY" ]; then
+    echo "Error: SSH_KEY file not found: $SSH_KEY"
+    exit 1
+fi
+
 echo "Deploying to: $EC2_USER@$EC2_HOST"
 echo "Application directory: $APP_DIR"
+echo "SSH Key: $SSH_KEY"
 
 # Create application directory on EC2
-ssh -i "$SSH_KEY" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" << ENDSSH
-    mkdir -p $APP_DIR
-    cd $APP_DIR
+echo "Creating application directory and stopping existing app..."
+ssh -i "$SSH_KEY" -o StrictHostKeyChecking=no -o ConnectTimeout=10 "$EC2_USER@$EC2_HOST" << ENDSSH
+    set -e
+    mkdir -p "$APP_DIR"
+    cd "$APP_DIR"
     
     # Stop the application if running
     if command -v pm2 &> /dev/null; then
-        pm2 stop $APP_NAME || true
-        pm2 delete $APP_NAME || true
+        pm2 stop "$APP_NAME" || true
+        pm2 delete "$APP_NAME" || true
     fi
 ENDSSH
 
 # Copy files to EC2
 echo "Copying files to EC2..."
-scp -i "$SSH_KEY" -o StrictHostKeyChecking=no -r \
+scp -i "$SSH_KEY" -o StrictHostKeyChecking=no -o ConnectTimeout=10 \
     app.js \
     package.json \
     ecosystem.config.js \
-    "$EC2_USER@$EC2_HOST:$APP_DIR/"
+    "$EC2_USER@$EC2_HOST:$APP_DIR/" || {
+    echo "Error: Failed to copy files to EC2"
+    exit 1
+}
 
 # SSH into EC2 and deploy
-ssh -i "$SSH_KEY" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" << ENDSSH
-    cd $APP_DIR
+echo "Installing dependencies and starting application..."
+ssh -i "$SSH_KEY" -o StrictHostKeyChecking=no -o ConnectTimeout=10 "$EC2_USER@$EC2_HOST" << ENDSSH
+    set -e
+    cd "$APP_DIR"
     
     echo "Installing dependencies..."
     export NVM_DIR="\$HOME/.nvm"
-    [ -s "\$NVM_DIR/nvm.sh" ] && . "\$NVM_DIR/nvm.sh"
+    [ -s "\$NVM_DIR/nvm.sh" ] && . "\$NVM_DIR/nvm.sh" || {
+        echo "Error: NVM not found. Installing NVM..."
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+        export NVM_DIR="\$HOME/.nvm"
+        [ -s "\$NVM_DIR/nvm.sh" ] && . "\$NVM_DIR/nvm.sh"
+    }
+    
     nvm use 18 || nvm install 18
     npm install --production
     
     echo "Starting application with PM2..."
-    pm2 start ecosystem.config.js
-    pm2 save
-    pm2 startup
+    if ! command -v pm2 &> /dev/null; then
+        echo "PM2 not found. Installing PM2..."
+        npm install -g pm2
+    fi
+    
+    pm2 start ecosystem.config.js || {
+        echo "Error: Failed to start application with PM2"
+        exit 1
+    }
+    pm2 save || true
+    pm2 startup || true
     
     echo "Deployment completed successfully!"
     echo "Application is running on: http://$EC2_HOST:3000"

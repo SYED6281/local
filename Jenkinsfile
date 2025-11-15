@@ -62,6 +62,14 @@ pipeline {
                         // Use username from credential and set app directory accordingly
                         // SSH_USER is available as shell variable from withCredentials
                         sh """
+                            # Debug: Show credential information (without exposing key)
+                            echo "Using SSH_USER: \$SSH_USER"
+                            if [ -f "\$SSH_KEY" ]; then
+                                echo "SSH_KEY file exists: Yes"
+                            else
+                                echo "SSH_KEY file exists: No"
+                            fi
+                            
                             # Determine app directory based on username
                             if [ "\$SSH_USER" = "ubuntu" ]; then
                                 APP_DIR="/home/ubuntu/app"
@@ -73,6 +81,14 @@ pipeline {
                             export EC2_USER="\$SSH_USER"
                             export APP_DIR="\$APP_DIR"
                             export APP_NAME='${env.APP_NAME}'
+                            
+                            # Verify SSH key file exists and has correct permissions
+                            if [ ! -f "\$SSH_KEY" ]; then
+                                echo "Error: SSH key file not found: \$SSH_KEY"
+                                exit 1
+                            fi
+                            
+                            # Run deployment script
                             SSH_KEY="\$SSH_KEY" ./deploy.sh
                         """
                     }
