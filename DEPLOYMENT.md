@@ -54,11 +54,19 @@ cd ~/app
 ### 2. Configure SSH Credentials in Jenkins
 
 1. Go to **Jenkins Dashboard** → **Manage Jenkins** → **Manage Credentials**
-2. Add new credentials:
+2. Click on your domain (usually "Global")
+3. Click **Add Credentials**
+4. Fill in the following:
    - **Kind**: SSH Username with private key
-   - **ID**: `ec2-deploy-key`
+   - **ID**: `ec2-deploy-key` (must match exactly)
+   - **Description**: EC2 Deployment Key (optional)
    - **Username**: `ec2-user` (or `ubuntu` for Ubuntu instances)
-   - **Private Key**: Paste your EC2 private key (.pem file content)
+   - **Private Key**: 
+     - Select **Enter directly**
+     - Click **Add** button
+     - Paste the entire content of your `62818.pem` file
+     - The key should start with `-----BEGIN RSA PRIVATE KEY-----` or `-----BEGIN OPENSSH PRIVATE KEY-----`
+5. Click **OK** to save
 
 ### 3. Configure Environment Variables
 
