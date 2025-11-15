@@ -4,8 +4,8 @@ pipeline {
     environment {
         NODE_VERSION = '18'
         APP_NAME = 'basic-jenkins-app'
-        // EC2 Deployment Variables - Set these in Jenkins job configuration
-        // EC2_HOST should be set as environment variable in Jenkins job
+        // EC2 Deployment Variables
+        EC2_HOST = '3.110.158.31'
         EC2_USER = 'ec2-user'
         APP_DIR = '/home/ec2-user/app'
     }
